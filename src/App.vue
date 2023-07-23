@@ -1,30 +1,35 @@
+<!--
+ * @Author: yangyongqian
+ * @Date: 2023-07-23 15:51:33
+ * @Description:项目入口文件
+-->
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <NavBar />
+  <router-view />
 </template>
 
+<script setup name="App">
+import NavBar from '@/components/NavBar';
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-nav {
-  padding: 30px;
+// 滚动条美化
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  position: absolute;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+::-webkit-scrollbar-thumb {
+  background: #1890ff;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+::-webkit-scrollbar-track {
+  background: #ddd;
 }
 </style>
