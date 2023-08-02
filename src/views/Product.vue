@@ -8,7 +8,7 @@
     <el-carousel v-if="loopList.length" height="calc(100vh - 59px)" direction="vertical" :autoplay="false">
       <el-carousel-item v-for="item in loopList" :key="item._id">
         <div class="item" :style="{
-          backgroundImage: `url(http://localhost:3000${item.cover})`
+          backgroundImage: `url(${API_URL}${item.cover})`
         }">
           <el-card class="box-card">
             <template #header>
@@ -33,6 +33,7 @@
 <script setup name="Product">
 import { onMounted, ref } from 'vue';
 import axios from 'axios';
+import { API_URL } from '@/utils/app.config'
 
 const loopList = ref([])
 onMounted(async () => {

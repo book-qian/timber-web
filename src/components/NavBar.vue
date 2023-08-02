@@ -22,7 +22,7 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 
 const loginHandler = () => {
-  window.location = 'http://localhost:8080/'
+  window.location = 'http://www.fxgh.top/timber-admin/#/login'
 }
 </script>
 

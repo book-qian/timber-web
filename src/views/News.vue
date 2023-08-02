@@ -34,7 +34,7 @@
         <el-col :span="6" v-for="item in newsBlock" :key="item._id">
           <el-card :body-style="{ padding: '0px' }" shadow="hover" @click="goDetail(item._id)">
             <div class="image-product" :style="{
-              backgroundImage: `url(http://localhost:3000${item.cover})`,
+              backgroundImage: `url(${API_URL}${item.cover})`,
             }"></div>
             <div style="padding: 14px">
               <span class="title">{{ item.title }}</span>
@@ -57,7 +57,7 @@
             <div v-for="data in tabNews[item.name]" :key="data._id" class="tab-content">
               <el-card :body-style="{ padding: '0px' }" shadow="hover" @click="goDetail(data._id)">
                 <div class="image-product" :style="{
-                  backgroundImage: `url(http://localhost:3000${data.cover})`,
+                  backgroundImage: `url(${API_URL}${data.cover})`,
                 }"></div>
                 <div style="padding: 14px">
                   <span class="title">{{ data.title }}</span>
@@ -93,6 +93,7 @@ import { Search } from "@element-plus/icons-vue";
 import axios from "axios";
 import timeFormat from "@/utils/timeFormat";
 import { useRouter } from 'vue-router'
+import { API_URL } from '@/utils/app.config'
 
 const visible = ref(false);
 const newsKeyWord = ref("");
